@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-//The comment hints at finding the value by trapezoidal estimation, 
-//so the integral over 1 to 3 will be estimated by using the trapezoidal rule with 10 intervals.
+/*  The comment hints at finding the value by trapezoidal estimation, 
+    so the integral will be estimated by using the trapezoidal rule with 10 intervals.*/
 double originalf(double x){
     return x*x*x;
 }
@@ -12,6 +12,20 @@ double trapezoidArea(double base1, double base2, double height){
 }
 
 double integrate(double a, double b, int interval){
+    /*  Dealing with special cases (although neither is happening in this question):
+        if lower bound is higher than upper bound) 
+        if the integration is from a to a
+        (this fix is a little ugly!)*/
+    int flipped = 1;
+    if(a>b){
+        double temp = a;
+        a = b;
+        b = temp;
+        flipped = -1;
+    }else if (a==b){
+        return 0;
+    }
+
     double step = (b-a)/interval;
     double x1 = a;
     double x2 = a+step;
@@ -23,12 +37,12 @@ double integrate(double a, double b, int interval){
         x1 = x2;
         x2 += step;
     }
-    return integral;
+    return flipped * integral;
 }
 
 int main(){
 
-    printf("result: %f\n", integrate(2,0,10));
+    printf("result: %f\n", integrate(0,2,10));
 
     return 0;
 }
