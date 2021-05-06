@@ -12,10 +12,10 @@ double trapezoidArea(double base1, double base2, double height){
 }
 
 double integrate(double a, double b, int interval){
-    /*  Dealing with special cases (although neither is happening in this question):
-        if lower bound is higher than upper bound) 
-        if the integration is from a to a
-        (this fix is a little ugly!)*/
+    /*  Dealing with 2 special cases (although neither can happen in this question):
+        1) if lower bound is higher than upper bound
+        2) if the integration is from a to a
+        (this fix is a little ugly, but it works!)*/
     int flipped = 1;
     if(a>b){
         double temp = a;
