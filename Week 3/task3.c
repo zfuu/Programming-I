@@ -13,6 +13,9 @@ int main(){
             if (n % i == 0){
                 break;
             }
+            // else{
+            //     i = i + 1; 
+            // }
         }
     if (i == n){
             printf("%5d", n);
@@ -23,7 +26,6 @@ int main(){
         }
 
     }
-
-
     printf("\n");
 }
+
