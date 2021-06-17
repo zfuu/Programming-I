@@ -6,10 +6,18 @@ float find_variance(float data[]);
 int main(){
     float kokugo[10];
     float eigo[10];
-
-    for(int i = 0; i < 10; i = i+1){       /* read data into array element */
-        scanf("%f%f",&kokugo[i],&eigo[i]);
+    
+    FILE *input = fopen("input","r");
+        
+    if (input == NULL){
+        printf("no such file.\n");
+        return 0;
     }
+
+    for (int i = 0; i < 10; ++i){
+        fscanf(input, "%f%f", &kokugo[i], &eigo[i]);
+    }
+    fclose(input);
 
     printf("Variance of kokugo scores:  %f\n", find_variance(kokugo));
     printf("Variance of eigo scores:  %f\n", find_variance(eigo));
