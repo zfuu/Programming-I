@@ -15,12 +15,7 @@ int main(){
     }
 
     for (int i = 0; i < 10; ++i){
-        float a,b;
-        fscanf(input, "%f%f", &a, &b);
-        // fscanf(input, "%f%f",&kokugo[i], &eigo[i]);
-        kokugo[i] = a;
-        eigo[i] = b;
-        // printf("array:%f %f\n", kokugo[i], eigo[i]);
+        fscanf(input, "%f%f",&kokugo[i], &eigo[i]);
     }
     fclose(input);
 
