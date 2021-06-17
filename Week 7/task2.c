@@ -6,17 +6,9 @@ int main(){
     float kokugo[10];
     float eigo[10];
     
-    FILE *input = fopen("input","r");
-        
-    if (input == NULL){
-        printf("no such file.\n");
-        return 0;
+    for(int i = 0; i < 10; i = i+1){       /* read data into array element */
+        scanf("%f%f",&kokugo[i],&eigo[i]);
     }
-
-    for (int i = 0; i < 10; ++i){
-        fscanf(input, "%f%f",&kokugo[i], &eigo[i]);
-    }
-    fclose(input);
 
     printf("Lowest kokugo score:  %f\n", find_lowest(kokugo));
     printf("Lowest eigo score:  %f\n", find_lowest(eigo));        
