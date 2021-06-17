@@ -33,7 +33,7 @@ float find_mean(float data[]){
 }
 
 float find_variance(float data[]){
-    float mean = 0, variance = 0, n = 0;
+    float mean = 0, variance = 0;
     mean = find_mean(data);
     for (int i = 0; i < 10; ++i){
         variance += ((data[i] - mean)*(data[i] - mean)) / 10;

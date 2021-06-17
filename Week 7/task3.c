@@ -23,7 +23,7 @@ int main(){
 }
 
 int find_lowest_person(float data[]){
-    float min = 101;
+    float min = data[0];
     int person = -1;
     for (int i = 0; i < 10; ++i){
         if (data[i] < min){

@@ -23,7 +23,7 @@ int main(){
 }
 
 float find_lowest(float data[]){
-    float min = 101;
+    float min = data[0];
     for (int i = 0; i < 10; ++i){
         if (data[i] < min){
             min = data[i];
