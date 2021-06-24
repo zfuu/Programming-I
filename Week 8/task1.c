@@ -14,5 +14,6 @@ int main(){
         }
     }
     
-    printf("value of a_static: %s\n", input);
+    printf("%s\n", input);
 }
+
